@@ -1,0 +1,116 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://TemperatureConversion.gd" type="Script" id=1]
+
+[node name="Panel" type="Panel"]
+margin_right = 400.0
+margin_bottom = 300.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 72.0
+margin_top = 24.0
+margin_right = 321.0
+margin_bottom = 38.0
+text = "TEMPERATURE CONVERSION PROGRAM"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 54.0
+margin_top = 73.0
+margin_right = 165.0
+margin_bottom = 87.0
+text = "Select Input Unit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 224.0
+margin_top = 73.0
+margin_right = 347.0
+margin_bottom = 87.0
+text = "Select Output Unit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList" type="ItemList" parent="."]
+margin_left = 67.0
+margin_top = 100.0
+margin_right = 160.0
+margin_bottom = 188.0
+items = [ "Celcius", null, false, "Kelvin", null, false, "Fahrenheit", null, false, "Rankine", null, false, "Réaumur", null, false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemList2" type="ItemList" parent="."]
+margin_left = 232.0
+margin_top = 100.0
+margin_right = 325.0
+margin_bottom = 188.0
+items = [ "Celcius", null, false, "Kelvin", null, false, "Fahrenheit", null, false, "Rankine", null, false, "Réaumur", null, false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSeparator" type="VSeparator" parent="."]
+margin_left = 200.0
+margin_top = 72.0
+margin_right = 204.0
+margin_bottom = 176.0
+
+[node name="HSeparator" type="HSeparator" parent="."]
+margin_left = 32.0
+margin_top = 195.0
+margin_right = 368.0
+margin_bottom = 199.0
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 208.0
+margin_right = 229.0
+margin_bottom = 222.0
+text = "Enter Input temperature value:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 148.0
+margin_top = 232.0
+margin_right = 262.0
+margin_bottom = 252.0
+text = "Compute Result"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 240.0
+margin_top = 208.0
+margin_right = 336.0
+margin_bottom = 232.0
+text = "100"
+
+[node name="Label5" type="Label" parent="."]
+margin_left = 304.0
+margin_top = 264.0
+margin_right = 344.0
+margin_bottom = 278.0
+text = "Result"
+
+[node name="Label6" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 264.0
+margin_right = 269.0
+margin_bottom = 278.0
+text = "Calculated Output Temperature Value:"
+
+[connection signal="item_selected" from="ItemList" to="." method="_on_ItemList_item_selected"]
+[connection signal="item_selected" from="ItemList2" to="." method="_on_ItemList2_item_selected"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]
